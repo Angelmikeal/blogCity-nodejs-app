@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs')  %>
+
+<body class="bg-dark">
+    <%- include('./partials/nav.ejs')  %>
+
+
+    <div class="jumbotron jumbotron-fluid bg-info">
+        <div class="container">
+            <h1 class="display-4"><%= title %> </h1>
+            <p class="lead"><%= description %></p>
+            <hr class="my-4">
+            <p class="text-break my-5"><%= content %></p>
+            <a class="btn btn-danger position-abosolute float-right" href="/blog/delete/<%= _id %> ">Delete</a>
+        </div>
+    </div>
+
+    <%- include('./partials/script.ejs')  %>
+
+</body>
+
+</html>

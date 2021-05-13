@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs')  %>
+
+<body class="bg-dark">
+    <%- include('./partials/nav.ejs')  %>
+
+
+    <div class="jumbotron jumbotron-fluid bg-info">
+        <div class="container">
+            <h1 class="display-4">Blog City</h1>
+            <p class="lead"><%= purpose %></p>
+            <hr class="my-4">
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <% if (blogs.length > 0) { %>
+            <% blogs.forEach(blog => { %>
+                <div class="container">
+                    <div class="card my-2 w-100 p-3 mb-2 blog">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <p class="card-text"><%= blog.description %></p>
+                            <a class="btn btn-primary" href="/blog/<%= blog._id %>" >Read</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class="alert alert-primary" role="alert">
+                No blogs yet
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('./partials/script.ejs')  %>
+
+</body>
+
+</html>

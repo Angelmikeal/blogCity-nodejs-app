@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')  %>
+
+<body class="bg-dark">
+    <%- include('./partials/nav.ejs')  %>
+
+    <div class="jumbotron jumbotron-fluid bg-info">
+        <div class="container">
+            <h1 class="display-4"><%= title %> </h1>
+            <p class="lead"><%= purpose %></p>
+            <hr class="my-4">
+
+            <div class="form-group">
+                <form action="./create" method="POST">
+                    <label for="my-input" class="m-1">Title</label>
+                    <input id="my-input" class="form-control" type="text" name="title">
+                    <label for="my-input" class="m-1">Description</label>
+                    <input id="my-input" class="form-control" type="text" name="description">
+                    <label for="my-textarea" class="m-1">Blog</label>
+                    <textarea id="my-textarea" class="form-control" name="content" rows="3"></textarea>
+                    <button type="submit" class="btn btn-success my-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/script.ejs')  %>
+
+</body>
+
+</html>
