@@ -11,7 +11,7 @@ if (port == null || port == "") {
   port = 3000;
 }
 
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         app.listen(port, () => {
             console.log(`Server started on port`);
