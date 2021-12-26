@@ -3,14 +3,15 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blogs');
 const blogRoutes = require('./routes/blog_routes')
 const app = express();
-const dburl = 'mongodb+srv://kami:opensaysme@cluster0.gqa8u.mongodb.net/Nodeprac?retryWrites=true&w=majority'
+require('dotenv/config')
 
 let port = process.env.PORT;
+
 if (port == null || port == "") {
   port = 3000;
 }
 
-mongoose.connect(dburl, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         app.listen(port, () => {
             console.log(`Server started on port`);
